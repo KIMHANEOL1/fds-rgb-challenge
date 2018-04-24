@@ -1,7 +1,8 @@
 //문자열이 랜덤으로 나오게 하는 코드
 function randomNumber(){
-    return Math.floor(256*math.random());   //256보다 작은 수가 랜덤으로 나오게 함
+    return Math.floor(256 * Math.random());   //256보다 작은 수가 랜덤으로 나오게 함
 }
+
 
 function randomColorCode(){
     return `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
@@ -15,8 +16,10 @@ let correctAnswer;
 let score=0;
 document.querySelector('.score').textContent = score;
 
+
 function newStage(){
     const colorCodes=[randomColorCode(),randomColorCode(),randomColorCode()]
+    console.log(colorCodes);
     boxes.forEach((el,index)=>{
         el.style.backgroundColor = colorCodes[index];
     });
@@ -25,15 +28,14 @@ function newStage(){
 }
 
 
+
 boxes.forEach((el, index)=>{
     el.addEventListener('click',()=>{
         el.classList.add('large');
         if(correctAnswer === index){
-            
             document.querySelector('.modal.right').classList.add('show');
             score++;
         }else{
-            
             score=0;
         }
         document.querySelector('.score').textContent = score;
@@ -41,14 +43,19 @@ boxes.forEach((el, index)=>{
     
 })
 
-document.querySelector('.modal.right.close').addEventListener('click',()=>{
+
+
+document.querySelector('.modal.right .close').addEventListener('click',()=>{
     newStage();
     boxes.forEach(el =>{
-    el.classList.remove('show');
+    el.classList.remove('large');
 });
     document.querySelector('.modal.right').classList.remove('show');
 })
 
 
 newStage();
+
+
+
 

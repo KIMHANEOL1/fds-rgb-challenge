@@ -12,10 +12,9 @@ html, body{
     transition: transform 1s;
 }
 
-.box.larger{
+.box.large{
     transform: scale(50);
 }
-
 
 .modal{
     display: none;
