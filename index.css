@@ -1,0 +1,30 @@
+html, body{
+    height: 100%;       /* 부모기준 */
+    margin: 0;
+    overflow: hidden;
+}
+
+.box {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.box.larger{
+    transform: scale(50);
+}
+
+
+.modal{
+    display: none;
+    position: fixed;
+    top:10px;
+    left: 10px;
+}
+
+.modal.show{
+    display: block;
+}
+
